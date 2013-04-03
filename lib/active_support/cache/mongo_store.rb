@@ -1,7 +1,7 @@
 require 'active_support'
 require 'mongo'
 
-module MongoStore
+module MongoStoreModule
   module Cache
     module Rails2
       attr_reader :options
@@ -114,7 +114,7 @@ end
 module ActiveSupport
   module Cache
     class MongoStore < Store
-      include ::MongoStore::Cache::Store
+      include ::MongoStoreModule::Cache::Store
       
       # Returns a MongoDB cache store.  Can take either a Mongo::Collection object or a collection name.
       # If neither is provided, a collection named "rails_cache" is created.
